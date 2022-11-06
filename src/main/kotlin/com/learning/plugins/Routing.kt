@@ -11,3 +11,11 @@ fun Application.configureRouting() {
         }
     }
 }
+
+fun Application.bookRouting() {
+    routing {
+        get("/book") {
+            call.respondText("From Book")
+        }
+    }
+}
