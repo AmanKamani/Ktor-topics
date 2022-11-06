@@ -1,23 +1,16 @@
 # Ktor Topics
 
-## Server
+## Templating
 
-Ktor supports following server engines:
+Templating allows to make static pages dynamics with templating.
 
-- Netty
-- Jetty
-- Tomcat
-- CIO (Coroutine-based I/O)
-- ServletApplicationEngine
+Ktor allows following templatings:
 
-There are 2 types of server creations supported by Ktor. Both has difference of providing configurations.
-
-1. **Embedded Server**:
-
-This type of server takes the configuration while initializing server. So, whenever the configuration changes, we have
-to recompile the code.
-
-2. **EngineMain Server**:
-
-This type of server has external configuration file(`application.conf`). Which doesn't require the recompilation on
-configuration changes.
+- [HTML DSL](https://ktor.io/docs/html-dsl.html)
+- [CSS DSL](https://ktor.io/docs/css-dsl.html)
+- [FreeMarker](https://ktor.io/docs/freemarker.html)
+- [Velocity](https://ktor.io/docs/velocity.html)
+- [Mustache](https://ktor.io/docs/mustache.html)
+- [Thymeleaf](https://ktor.io/docs/thymeleaf.html)
+- [Pebble](https://ktor.io/docs/pebble.html)
+- [JTE](https://ktor.io/docs/jte.html)
