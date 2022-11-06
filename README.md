@@ -1,23 +1,26 @@
 # Ktor Topics
 
-## Server
+## Auto Reloading
 
-Ktor supports following server engines:
+1. Embedded Server Auto Reloading
 
-- Netty
-- Jetty
-- Tomcat
-- CIO (Coroutine-based I/O)
-- ServletApplicationEngine
+- Add watchPaths argument in embeddedServer function
 
-There are 2 types of server creations supported by Ktor. Both has difference of providing configurations.
+2. EngineMain Auto Reloading
 
-1. **Embedded Server**:
+- Enable Development mode in configuration file
+  `development = true`
+- Add watch paths in configuration file
+  `watch = [ classes, resources]`
 
-This type of server takes the configuration while initializing server. So, whenever the configuration changes, we have
-to recompile the code.
+> `Note:`
+> watch/watchPaths will contain the folder names of build folder
 
-2. **EngineMain Server**:
+Required for both the methods:
 
-This type of server has external configuration file(`application.conf`). Which doesn't require the recompilation on
-configuration changes.
+- Add below line into **gradle.properties** (Optional: If JAVA_HOME variable not set)
+  `org.gradle.java.home=path_to_jdk_without_bin`
+- Build project with:
+
+> ./gradlew -t build \
+`-t :` will watch for the file changes & rebuild the project
